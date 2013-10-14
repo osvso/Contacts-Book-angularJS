@@ -1,3 +1,10 @@
+/*
+You are free to use this script as long as the copyright message is kept intact
+    
+Pawel Lewandowski
+    
+*/
+
 module.exports = function (config) {
     config.set({
         basePath: '../',
