@@ -1,0 +1,11 @@
+{
+  "name": "contactsBook-test",
+  "description": "",
+  "devDependencies": {
+        "phantomjs" : "*",
+        "karma" : "*",
+        "karma-junit-reporter" : "*",    
+        "karma-jasmine" : "*",
+        "karma-ng-scenario" : "*"
+    }
+}

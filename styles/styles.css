@@ -1,0 +1,83 @@
+body {
+    background:#e3e2e2;
+}
+textarea {
+    height: 175px;
+    width: 100%;
+    text-align: center;
+    resize: none;
+}
+
+h1 {
+    position: absolute;
+    top: -120px;
+    width: 100%;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+}
+
+.formInput {
+    width:200px;
+    margin:0 auto;
+    display:block;
+    text-align: justify;
+}
+
+#listContainer {
+    background:#e3e2e2;
+    width: 500px ;
+    max-width: 500px;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
+}
+
+.contactsList a {
+    display:block;
+    color: #9f9f9f;
+    padding:12px 10px;
+    text-align: center;
+    background:#e3e2e2;
+    margin-left: 30px;
+    border-bottom:1px solid #cac9c9;
+    position:relative;
+    cursor:pointer;
+}
+.contactsList a:hover {
+    color: #8e8e8e;
+    background:#f4f4f4;
+    -webkit-transition:0.1s linear background;
+    -moz-transition:0.1s linear background;
+    transition:0.1s linear background;
+}
+.contactsList a.selected {
+    color: #6f6f6f;
+    background:#fff;
+}
+.contactsList a.selected:hover {
+    background:#f4f4f4;
+}
+.contactsList a.selected:after {
+    content:"\2713";
+    position:absolute;
+    right:10px;
+    top:50%;
+    font-size:20px;
+    margin-top:-10px;
+}
+.contactsList a.no-border {
+    border:none;
+}
+
+.padtop {
+    padding-top: 5px;
+}

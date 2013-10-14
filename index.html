@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contacts Book app</title>
+
+    <!-- Styles -->
+    <style>[ng-cloak] { display: none; }</style>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular/ui-bootstrap-tpls-0.6.0.js"></script>
+    <script src="js/context/appContext.js"></script>
+    <script src="js/model/contactDef.js"></script>
+    <script src="js/model/dummyContacts.js"></script>
+    <script src="js/services/contactsBookStorage.js"></script>
+    <script src="js/controllers/contactsListCtrl.js"></script>
+    <script src="js/controllers/contactDetailsCtrl.js"></script>
+</head>
+
+</head>
+<body>
+    <div ng-app="contactsBook">
+        <div ng-view></div>
+
+        <script type="text/ng-template" id="contactsList.html">
+            <div id="listContainer">
+                <h3>Contacts list</h1>
+                <div class = "row contactsList">
+                    <div class="large-2 columns contactsList">
+                        <a ng-repeat="contact in contactsList" ng-click="openDetails(contact)"
+                           ng-mouseover="contactMouseOverHandler(contact)" ng-mouseleave="contactMouseLeaveHandler(contact)"
+                           class="{{isSelected(contact) && 'selected' || ''}}">{{contact.firstName + ' ' + contact.lastName}}</a>
+                        <a ng-show="!contactsList.length">List empty...</a>
+                    </div>
+                </div>
+                <button class="btn btn-primary" ng-click="openDetails()">Add contact</button>
+                <button class="btn btn-primary" ng-disabled="!selectedContact" ng-click="removeContact(selectedContact)">Remove contact</button>
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="contactDetails.html">
+            <div class="modal-header">
+                <h3>Contact details</h3>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div>First name : <input ng-model="firstName" name="firstName" class="formInput" type="text"></div>
+                    <div>Last name : <input ng-model="lastName" name="lastName" class="formInput" type="text"></div>
+                    <div>Telephone : <input ng-model="telephone" name="telephone" class="formInput" type="text"></div>
+                    <div>Emails : <input ng-model="emails" name="emails" class="formInput" type="text" popover="Separate emails with commas." popover-trigger="mouseenter"></div>
+                    <div>Twitter name : <input ng-model="twitterName" name="twitterName" class="formInput" type="text"></div>
+                    <div>Description : <input ng-model="description" name="description" class="formInput" type="text"></div>
+                </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok(contactForm)">Save</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+    </div>
+</body>
+</html>
